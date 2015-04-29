@@ -19,15 +19,93 @@
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
-    <script src="js/app.js"></script>
-  </head>
-  <body ng-app="calorific">
+	<script type="text/javascript">
+      angular.module('counter', ['ionic'])
+
+      .controller("proteinCtrl", function($scope) {
+        $scope.protein = 0;
+      });
+    </script> 
+
+
+ </head>
+  <body ng-app="counter" ng-controller = "proteinCtrl">
+
 
     <ion-pane>
       <ion-header-bar class="bar-stable">
         <h1 class="title">Calorie Counter</h1>
       </ion-header-bar>
       <ion-content>
+	  <!--This part takes in your intake of calories -->
+        <div>
+          <h3 class="title">Calories:</h3>
+                  <label class="item item-input">
+                  <input type="number" placeholder="Calories">
+                  </label>
+        </div>
+        <!--This part takes in your protein intake-->
+        <div>
+         <h3 class="title">Protein:</h3>
+	<div class="list list-inset">
+	
+                 <button class="button button-dark" ng-click="protein = protein + 1">
+ 		 +1
+		</button>
+		<button class="button button-dark"ng-click="protein = protein + 5">
+ 		+5
+		</button>
+		<button class="button button-dark"ng-click="protein = protein + 10">
+ 		+10
+		</button>
+		</div>
+
+	<div class="list list-insert">
+		
+		 <button class="button button-light"ng-click="protein = protein - 1">
+                 -1
+                </button>
+                <button class="button button-light"ng-click="protein = protein - 5">
+                -5
+                </button>
+		<button class="button button-light"ng-click="protein = protein - 10">
+                -10
+                </button>
+		</div>
+		
+        </div>
+        <!--This part takes in your fat intake-->
+         <h3 class="title">Fat:</h3>
+                 
+        </div>
+        <!--This part takes in your carbs-->
+         <h3 class="title">Carbohydrates:</h3>
+                 
+        </div>
+        <!--The following code is 2 buttons, 1 is for adding the above to your daily intake, the other brings you to your daily intake page-->
+        <button class="button">
+        ADD TO INTAKE
+        </button>
+
+        <h1 class="title">DAILY INTAKE</h1>
+        <h3 class="title">Calories:</h3>
+        <h3 class="title">Protein:</h3>
+
+			<label class="item item-input">
+                 	 <input type="number" ng-model="protein">
+                 	 </label>
+
+			
+        <h3 class="title">Fat:</h3>
+        <h3 class="title">Carbohydrates:</h3>
+
+
+
+        <button class="button">
+        RESET
+        </button>
+
+
       </ion-content>
     </ion-pane>
   </body>
