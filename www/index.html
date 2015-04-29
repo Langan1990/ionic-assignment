@@ -24,12 +24,26 @@
 
       .controller("proteinCtrl", function($scope) {
         $scope.protein = 0;
-      });
+      })
+
+	.controller("caloriesCtrl", function($scope) {
+        $scope.calories = 0;
+      })
+
+	 .controller("fatCtrl", function($scope) {
+        $scope.fat = 0;
+      })
+
+ .controller("carbsCtrl", function($scope) {
+        $scope.carbs = 0;
+      })
+	;
+
     </script> 
 
 
  </head>
-  <body ng-app="counter" ng-controller = "proteinCtrl">
+  <body ng-app="counter" ng-controller = "proteinCtrl" ng-controller="carbsCtrl"  ng-controller = "caloriesCtrl" ng-controller = "fatCtrl" >
 
 
     <ion-pane>
@@ -40,10 +54,35 @@
 	  <!--This part takes in your intake of calories -->
         <div>
           <h3 class="title">Calories:</h3>
-                  <label class="item item-input">
-                  <input type="number" placeholder="Calories">
-                  </label>
-        </div>
+        
+	  <div class="list list-inset">
+
+                 <button class="button button-dark" ng-click="calories = calories + 1">
+                 +1
+                </button>
+                <button class="button button-dark"ng-click="calories = calories + 5">
+                +5
+                </button>
+                <button class="button button-dark"ng-click="calories = calories + 10">
+                +10
+                </button>
+                </div>
+
+        <div class="list list-insert">
+
+                 <button class="button button-light"ng-click="calories = calories - 1">
+                 -1
+                </button>
+                <button class="button button-light"ng-click="calories = calories - 5">
+                -5
+                </button>
+                <button class="button button-light"ng-click="calories = calories - 10">
+                -10
+                </button>
+                </div>
+	
+
+	</div>
         <!--This part takes in your protein intake-->
         <div>
          <h3 class="title">Protein:</h3>
@@ -61,7 +100,7 @@
 		</div>
 
 	<div class="list list-insert">
-		
+	
 		 <button class="button button-light"ng-click="protein = protein - 1">
                  -1
                 </button>
@@ -76,19 +115,72 @@
         </div>
         <!--This part takes in your fat intake-->
          <h3 class="title">Fat:</h3>
+  <div class="list list-inset">
+
+                 <button class="button button-dark" ng-click="fat = fat + 1">
+                 +1
+                </button>
+                <button class="button button-dark"ng-click="fat = fat + 5">
+                +5
+                </button>
+                <button class="button button-dark"ng-click="fat = fat + 10">
+                +10
+                </button>
+                </div>
+
+        <div class="list list-insert">
+
+                 <button class="button button-light"ng-click="fat = fat - 1">
+                 -1
+                </button>
+                <button class="button button-light"ng-click="fat = fat - 5">
+                -5
+                </button>
+                <button class="button button-light"ng-click="fat = fat - 10">
+                -10
+                </button>
+                </div>
                  
         </div>
         <!--This part takes in your carbs-->
          <h3 class="title">Carbohydrates:</h3>
+	<div class="list list-inset">
+
+                 <button class="button button-dark" ng-click="carbs = carbs + 1">
+                 +1
+                </button>
+                <button class="button button-dark"ng-click="carbs = carbs + 5">
+                +5
+                </button>
+                <button class="button button-dark"ng-click="carbs = carbs + 10">
+                +10
+                </button>
+                </div>
+
+        <div class="list list-insert">
+
+                 <button class="button button-light"ng-click="carbs = carbs - 1">
+                 -1
+                </button>
+                <button class="button button-light"ng-click="carbs = carbs - 5">
+                -5
+                </button>
+                <button class="button button-light"ng-click="carbs = carbs - 10">
+                -10
+                </button>
+                </div>
                  
         </div>
-        <!--The following code is 2 buttons, 1 is for adding the above to your daily intake, the other brings you to your daily intake page-->
-        <button class="button">
-        ADD TO INTAKE
-        </button>
+        
 
         <h1 class="title">DAILY INTAKE</h1>
         <h3 class="title">Calories:</h3>
+
+			<label class="item item-input">
+                         <input type="number" ng-model="calories">
+                         </label>
+
+	
         <h3 class="title">Protein:</h3>
 
 			<label class="item item-input">
@@ -97,12 +189,21 @@
 
 			
         <h3 class="title">Fat:</h3>
+
+			 <label class="item item-input">
+                         <input type="number" ng-model="fat">
+                         </label>
+
+
         <h3 class="title">Carbohydrates:</h3>
 
+			<label class="item item-input">
+                         <input type="number" ng-model="carbs">
+                         </label>
 
 
-        <button class="button">
-        RESET
+        <button class="button" ng-click= "protein = 0;fat = 0;carbs = 0;calories = 0">
+        RESET DAILY INTAKE
         </button>
 
 
