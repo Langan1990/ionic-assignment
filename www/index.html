@@ -19,9 +19,10 @@
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
+	<!--the following scripts control the intake of protein, calories, fat and carbs-->
 	<script type="text/javascript">
       angular.module('calorie', ['ionic'])
-
+	
       .controller("proteinCtrl", function($scope) {
         $scope.protein = 0;
       })
@@ -43,20 +44,20 @@
 
 
  </head>
-  <body ng-app="calorie" ng-controller = "proteinCtrl" ng-controller="carbsCtrl"  ng-controller = "caloriesCtrl" ng-controller = "fatCtrl" >
+  <body ng-app="calorie" ng-controller = "proteinCtrl" ng-controller="carbsCtrl"  ng-controller = "caloriesCtrl" ng-controller = "fatCtrl" ><!--controlers declared in the body -->
 
 
     <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <h1 class="title">Calorie Counter</h1>
+      <ion-header-bar class="bar-stable bar-dark">
+        <h1 class="title">Calorie Counter +</h1><!--header for the app-->
       </ion-header-bar>
       <ion-content>
 	  <!--This part takes in your intake of calories -->
         <div class="list">
 	
 	 <h3 class="title">Calories(g):</h3>
-	  <div class="list list-inset">
-
+	  <div class="list list-inset"><!--this list allows the buttons to be in a row-->
+		<!--button that control the intake -->
                  <button class="button button-dark" ng-click="calories = calories + 1">
                  +1
                 </button>
@@ -72,7 +73,7 @@
 
 		 </div>
 
-        <div class="list list-inset">
+        <div class="list list-inset"><!--this list allows the buttons to be in another row-->
 
                  <button class="button button-light"ng-click="calories = calories - 1">
                  -1
@@ -88,13 +89,17 @@
                 </button>
 
 	         </div>
-			
+			<!--label that displays the intake-->
 	  	   <label class="item item-input">
                    <input type="number" ng-model="calories">
                    </label>
 
 	</div>
-        <!--This part takes in your protein intake-->
+       
+
+
+
+	 <!--This part takes in your protein intake-->
         <div>
          <h3 class="title">Protein(g):</h3>
 	<div class="list list-inset">
@@ -124,15 +129,19 @@
 		</div>
 		
         </div>
-
+		<!--label that displays the intake-->
 	 <label class="item item-input">
                          <input type="number" ng-model="protein">
                          </label>
 
 
-        <!--This part takes in your fat intake-->
+       
+
+
+
+	 <!--This part takes in your fat intake-->
          <h3 class="title">Fat(g):</h3>
-  <div class="list list-inset">
+ 	 <div class="list list-inset">
 
                  <button class="button button-dark" ng-click="fat = fat + 1">
                  +1
@@ -159,15 +168,20 @@
                 </div>
                  
         </div>
-
+	<!--label that displays the intake-->
 	  <label class="item item-input">
                          <input type="number" ng-model="fat">
                          </label>
 
 
 
+
+
+
+
+
         <!--This part takes in your carbs-->
-         <h3 class="title">Carbohydrates(g):</h3>
+        <h3 class="title">Carbohydrates(g):</h3>
 	<div class="list list-inset">
 
                  <button class="button button-dark" ng-click="carbs = carbs + 1">
@@ -195,7 +209,7 @@
                 </div>
                  
         </div>
-        
+	<!--label that displays the intake--> 
 	 <label class="item item-input">
                          <input type="number" ng-model="carbs">
                          </label>
@@ -203,7 +217,7 @@
 
 
 
-
+	<!--this button resets all the intake values to zero-->
         <button class="button button-block button-dark" ng-click= "protein = 0;fat = 0;carbs = 0;calories = 0">
         RESET DAILY INTAKE
         </button>
